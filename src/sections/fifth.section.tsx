@@ -2,6 +2,7 @@ import TitleBadge from "@/components/ui/badge/title.badge";
 import SectionTitle from "@/components/ui/text/section-title.text";
 import HowDoesItWorkCard from "@/components/ui/cards/how-does-it-work.card";
 import {fifthSectionData} from "@/const/index.const";
+import SectionName from "@/components/ui/text/section-name.text";
 
 function FifthSection() {
     return (
@@ -9,9 +10,9 @@ function FifthSection() {
             id={'why-us'}
             className={"pb-[15px] scroll-mt-[100px] lg:pb-[75px] pt-[25px]"}>
             <div className={'section-header text-center'}>
-                <TitleBadge title={'Niyə biz?'}/>
-                <SectionTitle className={'mt-3 px-3'}>
-                    Xidmət tapmaq asan olmamışdı
+               <SectionName className={'justify-center'}>Helplly sizə nə qazandırır?</SectionName>
+                <SectionTitle className={'mt-3  px-3'}>
+                    İcraçılar üçün üstünlüklər
                 </SectionTitle>
             </div>
             <div className={"how-does-it-work-cards mt-[24px] lg:mt-[36px] grid grid-cols-1 items-start  md:grid-cols-2  lg:grid-cols-3 gap-5"}>

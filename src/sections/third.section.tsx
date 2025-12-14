@@ -1,19 +1,21 @@
 import SectionTitle from "@/components/ui/text/section-title.text";
+import SectionName from "@/components/ui/text/section-name.text";
 
 
 function ThirdSection() {
     return (
         <section
             id={'third-section'}
-            className={" pb-[15px]  pt-[25px]  lg:pb-[75px]  lg:pt-[95px] lg:flex lg:items-center lg:justify-between lg:gap-16"}>
+            className={" mb-[40px] lg:mb-[100px]  lg:flex lg:items-center lg:justify-between lg:gap-16"}>
             <div className={'section-header md:max-w-2/3 lg:max-w-[464px]'}>
+                <SectionName className={'mb-2'}>Doğru icraçını seçin</SectionName>
                 <SectionTitle className={'mb-4'}>
-                    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+                    Seçim tam olaraq sizə məxsusdur
+                    İşiniz üçün doğru icraçını seçin
+
                 </SectionTitle>
                 <p className={'text-[#00000099] leading-5 lg:leading-6 text-sm lg:text-[16px] '}>
-                    The "No tree cutting" programme is being realized at the joint intiative of Heydar Aliyev Foundation
-                    and IDEA Public Union.realized at the joint intiative of Heydar Aliyev Foundation and IDEA Public
-                    Union.
+                  <span className={'font-semibold text-[#212121]'}>Helplly</span>-də işi paylaşdıqdan sonra bir neçə icraçıdan istək alırsınız. Onların məlumatlarını və əvvəlki fəaliyyətini nəzərdən keçirərək uyğun olanı seçirsiniz.
                 </p>
             </div>
 

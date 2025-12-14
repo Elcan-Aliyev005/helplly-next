@@ -7,23 +7,60 @@ export function  FaqAccordion() {
     const data = [
         {
             id: 1,
-            question: "Xidmət sifarişini necə yarada bilərəm?",
+            question: "Helplly nədir?",
             answer:
-                "Platformaya daxil olub xidmət kateqoriyasını, vaxtı və büdcəni seçərək tapşırıq yarada bilərsiniz.",
+                "Helplly ev təmiri, təmizlik, usta və digər gündəlik xidmətləri tez və rahat tapmaq üçün mobil platformadır.",
         },
         {
             id: 2,
-            question: "Müştəri və icraçı arasında problem olarsa nə etməliyəm?",
+            question: "Xidməti necə sifariş edə bilərəm?",
             answer:
-                "Hər hansı problem yaranarsa, dəstək xidmətimizlə əlaqə saxlaya bilərsiniz.",
+                "Tətbiqdə xidməti seçin, qısa qeydinizi yazın, təklifləri müqayisə edin və icraçını təsdiqləyin.",
         },
         {
             id: 3,
-            question: "İcraçı etibarlıdırmı?",
+            question: "Helplly-də hansı xidmətlər mövcuddur?",
             answer:
-                "İcraçıların profilləri, reytinqləri və rəyləri əsasında etibarlılıq yoxlanıla bilər.",
+                "Ev təmiri, məişət xidmətləri, təmizlik, texniki dəstək və digər gündəlik ehtiyaclar.",
+        },
+        {
+            id: 4,
+            question: "Təklifləri necə müqayisə edə bilərəm?",
+            answer:
+                "Qiymət, məsafə və digər istifadəçi rəylərinə əsasən ən uyğun icraçını seçə bilərsiniz.",
+        },
+        {
+            id: 5,
+            question: "İcraçılar necə seçilir?",
+            answer:
+                "Bütün icraçılar platformamızda yoxlanılmış və real istifadəçi rəyləri ilə təsdiqlənmişdir.",
+        },
+        {
+            id: 6,
+            question: "Biznes hesabı açmaq mümkündürmü?",
+            answer:
+                "Bəli, xidmət göstərənlər profil yaradaraq müraciətləri qəbul edə və yeni müştərilər qazana bilər.",
+        },
+        {
+            id: 7,
+            question: "Mobil tətbiqin üstünlükləri nədir?",
+            answer:
+                "Sifarişlərinizi izləmək, müştərilərlə ünsiyyət qurmaq və ödənişləri bir yerdən idarə etmək mümkündür.",
+        },
+        {
+            id: 8,
+            question: "Xidmətin qiyməti necə müəyyən olunur?",
+            answer:
+                "Qiymət icraçı və ya siz tərəfdən təklif olunur, siz müqayisə edib ən uyğun təklifi seçirsiniz.",
+        },
+        {
+            id: 9,
+            question: "Helplly ilə işlərim nə qədər sürətli həll olunur?",
+            answer:
+                "Sifarişdən sonra yaxın icraçılar dərhal təklif göndərir, iş vaxtında və şərtlərə uyğun tamamlanır.",
         },
     ];
+
 
 
     const [opened, setOpened] = useState<string | null>(null);

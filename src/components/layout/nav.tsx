@@ -35,7 +35,7 @@ function Nav({list=menuList, ...props}: Props) {
                             href={`/${link.path}`}
                             className={
                                 isActive
-                                    ? "text-[#0F820F] font-semibold"
+                                    ? "text-[#0F820F] leading-[23px] text-[18px]  font-medium"
                                     : "text-black hover:text-[#0F820F] transition-colors"
                             }
                         >
