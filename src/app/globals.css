@@ -20,3 +20,46 @@ html{
     display: none;
 }
 
+.contact-fab {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    border-radius: 9999px;
+    border: 1px solid #212121ad;
+
+    cursor: pointer;
+    z-index: 50;
+}
+
+
+.contact-fab::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    background: rgb(181, 218, 181);
+    border-radius: 9999px;
+    filter: blur(0px);
+    z-index: -1;
+    animation: pulseShadow 2.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulseShadow {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.4;
+    }
+}
+
+/* Mantine Notifications Border */
+.mantine-Notification-root {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}

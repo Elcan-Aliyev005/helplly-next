@@ -3,8 +3,9 @@ import SectionTitle from "@/components/ui/text/section-title.text";
 import HowDoesItWorkCard from "@/components/ui/cards/how-does-it-work.card";
 import {howDoesItWorkData} from "@/const/index.const";
 import SectionName from "@/components/ui/text/section-name.text";
+import { ITextSection } from "@/types";
 
-function HowDoesItWorkSection() {
+function HowDoesItWorkSection({data}: {data: ITextSection[]}) {
     return (
         <section
             id={'helplly'}
@@ -20,9 +21,9 @@ function HowDoesItWorkSection() {
                 </SectionTitle>
             </div>
             <div className={"how-does-it-work-cards mt-[24px] lg:mt-[36px] grid grid-col-1 lg:grid-cols-3 gap-5"}>
-                {howDoesItWorkData.map((data, index) => {
+                {data.map((item, index) => {
                     return (
-                        <HowDoesItWorkCard type={"with-bg-image"} index={index+1} key={index} {...data} />
+                        <HowDoesItWorkCard type={"with-bg-image"} index={index+1} key={index} {...item} />
                     )
                 })}
             </div>

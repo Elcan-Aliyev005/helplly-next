@@ -5,21 +5,38 @@ import {Drawer} from "@mantine/core";
 import Link from "next/link";
 import {Formik} from "formik";
 import {toFormikValidationSchema} from "zod-formik-adapter";
+import {useLocale, useTranslations} from 'next-intl';
+import {useState} from 'react';
+import {IMaskInput} from 'react-imask';
+import {notifications} from '@mantine/notifications';
 
 import {
-    contactFormSchema,
+    createContactFormSchema,
     ContactFormValues,
 } from "@/validation/contact-form.validation";
-import SocialMediaLinks from "@/components/custom/social-media.links";
 
 export default function MobileFormModal() {
     const [opened, {open, close}] = useDisclosure(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const locale = useLocale();
+    const t = useTranslations('ContactForm');
+    
+    const contactFormSchema = createContactFormSchema({
+        nameRequired: t('errors.nameRequired'),
+        nameMin: t('errors.nameMin'),
+        phoneRequired: t('errors.phoneRequired'),
+        phoneMin: t('errors.phoneMin'),
+        emailRequired: t('errors.emailRequired'),
+        emailInvalid: t('errors.emailInvalid'),
+        messageRequired: t('errors.messageRequired'),
+        messageMin: t('errors.messageMin'),
+    });
 
     const initialValues: ContactFormValues = {
         name: "",
+        phone_number: "",
         email: "",
-        subject: "",
-        message: "",
+        text: "",
     };
 
     return (
@@ -34,7 +51,7 @@ export default function MobileFormModal() {
                     header: "!p-0 !py-5 !px-5 !bg-[#108910]",
                     title: "w-full",
                     root:'!relative lg:hidden',
-                    body:"!p-4"
+                    body:"!p-4 !pb-24 !relative"
                 }}
                 transitionProps={{
                     transition: 'slide-up',
@@ -62,19 +79,65 @@ export default function MobileFormModal() {
                         </div>
                     </div>
                     <div className={'mt-3 mb-1'}>
-                        <h3 className={'leading-6 text-[16px] text-[#FFFFFF] font-semibold'}>Helplly: Sürətli
-                            kömək.</h3>
-                        <p className={'text-[12px] leading-4 text-[#FFFFFF99]'}>Sualınız var? Biz buradayıq</p>
+                        <h3 className={'leading-6 text-[16px] text-[#FFFFFF] font-semibold'}>{t('title')}</h3>
+                        <p className={'text-[12px] leading-4 text-[#FFFFFF99]'}>{t('subtitle')}</p>
                     </div>
                 </div>}
                 size={'100%'} opened={opened} position={"bottom"} onClose={close}>
                 <Formik
                     initialValues={initialValues}
                     validationSchema={toFormikValidationSchema(contactFormSchema)}
-                    onSubmit={(values, {resetForm}) => {
-                        console.log(values);
-                        resetForm();
-                        close();
+                    onSubmit={async (values, {resetForm, setFieldError}) => {
+                        setIsSubmitting(true);
+                        try {
+                            const res = await fetch('/api/contact', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'lang': locale,
+                                },
+                                body: JSON.stringify({
+                                    name: values.name,
+                                    phone_number: values.phone_number,
+                                    email: values.email,
+                                    text: values.text
+                                })
+                            });
+
+                            const responseData = await res.json();
+                            
+                            if (res.ok && responseData.status) {
+                                notifications.show({
+                                    title: t('success'),
+                                    message: '',
+                                    color: 'green',
+                                    withCloseButton: true,
+                                    withBorder: true
+                                });
+                                resetForm();
+                                setTimeout(() => close(), 300);
+                            } else {
+                                notifications.show({
+                                    title: t('error'),
+                                    message: responseData.message || t('errors.submitFailed'),
+                                    color: 'red',
+                                    withCloseButton: true,
+                                    withBorder: true
+                                });
+                                setFieldError('text', responseData.message || t('errors.submitFailed'));
+                            }
+                        } catch (error) {
+                            notifications.show({
+                                title: t('error'),
+                                message: t('errors.submitError'),
+                                color: 'red',
+                                withCloseButton: true,
+                                withBorder: true
+                            });
+                            setFieldError('text', t('errors.submitError'));
+                        } finally {
+                            setIsSubmitting(false);
+                        }
                     }}
                 >
                     {({
@@ -102,7 +165,31 @@ export default function MobileFormModal() {
                                     </p>
                                 )}
                             </div>
+                 
 
+
+                            <div className="mb-4">
+                                <h4 className={'leading-5 mb-1 text-[13px] font-semibold'}>Telefon</h4>
+                                <IMaskInput
+                                    mask="+994 00 000 00 00"
+                                    value={values.phone_number}
+                                    onAccept={(value: string) => {
+                                        handleChange({
+                                            target: {
+                                                name: 'phone_number',
+                                                value: value
+                                            }
+                                        } as any);
+                                    }}
+                                    placeholder="+994 12 345 67 89"
+                                    className="border rounded-[10px] w-full px-4 py-[10px] text-sm focus:outline-none  focus:border-[#0D6E0D]"
+                                />
+                                {touched.phone_number && errors.phone_number && (
+                                    <p className="text-red-500 text-xs font-medium mt-1">
+                                        {errors.phone_number}
+                                    </p>
+                                )}
+                            </div>
 
                             <div className="mb-4">
                                 <h4 className={'leading-5 mb-1 text-[13px] font-semibold'}>E-mail</h4>
@@ -120,35 +207,18 @@ export default function MobileFormModal() {
                                 )}
                             </div>
 
-
-                            <div className="mb-4">
-                                <h4 className={'leading-5 mb-1 text-[13px] font-semibold'}>Mövzu</h4>
-                                <input
-                                    name="subject"
-                                    value={values.subject}
-                                    onChange={handleChange}
-                                    placeholder="Mövzu daxil edin"
-                                    className="border rounded-[10px] w-full px-4 py-[10px] text-sm focus:outline-none focus:border-[#0D6E0D]"
-                                />
-                                {touched.subject && errors.subject && (
-                                    <p className="text-red-500 text-xs font-medium mt-1">
-                                        {errors.subject}
-                                    </p>
-                                )}
-                            </div>
-
                             <div className="mb-4">
                                 <h4 className={'leading-5 mb-1 text-[13px] font-semibold'}>Mesaj</h4>
                             <textarea
-                                name="message"
-                                value={values.message}
+                                name="text"
+                                value={values.text}
                                 onChange={handleChange}
                                 placeholder="Mesajınızı yazın"
                                 className="border rounded-[10px] h-[80px] w-full px-4 py-[10px] text-sm focus:outline-none   focus:border-[#0D6E0D]"
                             />
-                                {touched.message && errors.message && (
+                                {touched.text && errors.text && (
                                     <p className="text-red-500 text-xs font-medium mt-1">
-                                        {errors.message}
+                                        {errors.text}
                                     </p>
                                 )}
                             </div>
@@ -156,9 +226,10 @@ export default function MobileFormModal() {
                             <div className={'w-full left-0 right-0 bottom-0 px-4 pb-4 absolute'}>
                                 <button
                                     type="submit"
-                                    className="bg-[#212121]   text-white w-full py-[10px] rounded-full font-semibold text-sm"
+                                    disabled={isSubmitting}
+                                    className="bg-[#212121] text-white w-full py-[10px] rounded-full font-semibold text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    Göndər
+                                    {isSubmitting ? 'Göndərilir...' : 'Göndər'}
                                 </button>
                             </div>
                         </form>
@@ -173,6 +244,7 @@ export default function MobileFormModal() {
             >
                 <img src="/icons/contact-form.svg" alt="contact"/>
             </div>
+            
         </>
     );
 }

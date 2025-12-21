@@ -1,0 +1,110 @@
+{
+  "HomePage": {
+    "title": "Hello world!"
+  },
+  "Nav": {
+    "helplly": "Helplly",
+    "business": "Biznes",
+    "whyUs": "Niyə biz",
+    "faq": "Tez-tez verilən suallar",
+    "contact": "Bizimlə əlaqə",
+    "privacyPolicy": "Məxfilik Siyasəti",
+    "termsOfService": "İstifadəçi Şərtləri",
+    "back": "Geri",
+    "lastUpdated": "Son yenilənmə: Noyabr 2025"
+  },
+  "Footer": {
+    "description": "Bizi sosial mediada izləyin",
+    "copyright": "© 2025 Helplly. Bütün hüquqlar qorunur.",
+    "sections": {
+      "company": "Şirkət",
+      "contact": "Əlaqə",
+      "policies": "Policies"
+    },
+    "links": {
+      "about": "Haqqımızda",
+      "termsOfService": "İstifadəçi şərtləri",
+      "contact": "Bizimlə əlaqə",
+      "faq": "Tez-tez verilən suallar",
+      "privacyPolicy": "Məxfilik Siyasəti"
+    }
+  },
+  "LastSection": {
+    "subtitle": "Bizə qatıl",
+    "title": "Siz də bizə qoşulmaq istəyirsiniz?",
+    "description": "Uyğun icraçı tapmaq və paylaşılan işlərə icraçı kimi istək göndərmək üçün Helplly-ni yükləyin. Prosesi sadə və rahat şəkildə idarə edin."
+  },
+  "Header": {
+    "download": "Yüklə"
+  },
+  "BusinessSection": {
+    "selectRole": "Rolunuzu seçin",
+    "title": "Platformada öz rolunuzu seçin və işə başlayın",
+    "subtitle": "Vaxtınızı xərcləmədən ən uyğun xidməti seçin – mövcud variantları müqayisə edin və sürətlə peşəkarlarla əlaqə qurun.",
+    "services": {
+      "executor": {
+        "title": "İcraçı",
+        "description": "Elanlara baxın, uyğun işlərə istək göndərin, seçilərək qazanc əldə edin."
+      },
+      "serviceSeeker": {
+        "title": "Xidmət axtaran",
+        "description": "Görüləcək işi əlavə edin və icraçılardan gələn istəklər arasından seçim edin."
+      }
+    }
+  },
+  "FaqSection": {
+    "title": "Tez-Tez Verilən Suallar"
+  },
+  "FifthSection": {
+    "subtitle": "Helplly sizə nə qazandırır?",
+    "title": "İcraçılar üçün üstünlüklər"
+  },
+  "ReachTheRightCustomerSection": {
+    "subtitle": "Necə başlamalı?",
+    "title": "Sizin üçün uyğun işi necə tapmaq olar?"
+  },
+  "ThirdSection": {
+    "subtitle": "Doğru icraçını seçin",
+    "title": "Seçim tam olaraq sizə məxsusdur İşiniz üçün doğru icraçını seçin"
+  },
+  "WhoIsExecutorSection": {
+    "title": "İcraçı kimdir?"
+  },
+  "LanguageSwitcher": {
+    "az": "Azərbaycan",
+    "en": "English",
+    "ru": "Русский"
+  },
+  "ContactForm": {
+    "title": "Helplly: Sürətli kömək.",
+    "subtitle": "Sualınız var? Biz buradayıq",
+    "fields": {
+      "name": "Ad",
+      "phone": "Telefon",
+      "email": "E-mail",
+      "message": "Mesaj"
+    },
+    "placeholders": {
+      "name": "Adınızı daxil edin",
+      "phone": "Telefon nömrənizi daxil edin",
+      "email": "E-mailinizi daxil edin",
+      "message": "Mesajınızı yazın"
+    },
+    "errors": {
+      "nameRequired": "Adınızı daxil edin",
+      "nameMin": "Ad minimum 3 simvol olmalıdır",
+      "phoneRequired": "Telefon nömrənizi daxil edin",
+      "phoneMin": "Telefon nömrəsi minimum 9 simvol olmalıdır",
+      "emailRequired": "E-mail ünvanınızı daxil edin",
+      "emailInvalid": "Düzgün e-mail daxil edin",
+      "messageRequired": "Müraciətinizlə bağlı məlumatı qeyd edin",
+      "messageMin": "Mesaj minimum 10 simvol olmalıdır",
+      "submitError": "Xəta baş verdi, xahiş edirik yenidən cəhd edin",
+      "submitFailed": "Göndərilmədi, xahiş edirik yenidən cəhd edin"
+    },
+    "submit": "Göndər",
+    "submitting": "Göndərilir...",
+    "success": "Müraciətiniz uğurla göndərildi!",
+    "error": "Xəta baş verdi, xahiş edirik yenidən cəhd edin"
+  }
+}

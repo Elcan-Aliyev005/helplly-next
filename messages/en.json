@@ -1,0 +1,110 @@
+{
+  "HomePage": {
+    "title": "dsds!"
+  },
+  "Nav": {
+    "helplly": "Helplly",
+    "business": "Business",
+    "whyUs": "Why us",
+    "faq": "FAQ",
+    "contact": "Contact us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "back": "Back",
+    "lastUpdated": "Last updated: November 2025"
+  },
+  "Footer": {
+    "description": "Follow us on social media",
+    "copyright": "© 2025 Helplly. All rights reserved.",
+    "sections": {
+      "company": "Company",
+      "contact": "Contact",
+      "policies": "Policies"
+    },
+    "links": {
+      "about": "About us",
+      "termsOfService": "Terms of Service",
+      "contact": "Contact us",
+      "faq": "FAQ",
+      "privacyPolicy": "Privacy Policy"
+    }
+  },
+  "LastSection": {
+    "subtitle": "Join us",
+    "title": "Do you also want to join us?",
+    "description": "Download Helplly to find the right executor and send requests as an executor for shared jobs. Manage the process simply and comfortably."
+  },
+  "Header": {
+    "download": "Download"
+  },
+  "BusinessSection": {
+    "selectRole": "Select your role",
+    "title": "Choose your role on the platform and get started",
+    "subtitle": "Choose the most suitable service without wasting your time – compare available options and quickly connect with professionals.",
+    "services": {
+      "executor": {
+        "title": "Executor",
+        "description": "Browse listings, send requests for suitable jobs, get selected and earn."
+      },
+      "serviceSeeker": {
+        "title": "Service seeker",
+        "description": "Add the job to be done and choose from requests coming from executors."
+      }
+    }
+  },
+  "FaqSection": {
+    "title": "Frequently Asked Questions"
+  },
+  "FifthSection": {
+    "subtitle": "What does Helplly bring you?",
+    "title": "Benefits for executors"
+  },
+  "ReachTheRightCustomerSection": {
+    "subtitle": "How to get started?",
+    "title": "How to find the right job for you?"
+  },
+  "ThirdSection": {
+    "subtitle": "Choose the right executor",
+    "title": "The choice is entirely yours Choose the right executor for your job"
+  },
+  "WhoIsExecutorSection": {
+    "title": "Who is an executor?"
+  },
+  "LanguageSwitcher": {
+    "az": "Azerbaijani",
+    "en": "English",
+    "ru": "Russian"
+  },
+  "ContactForm": {
+    "title": "Helplly: Fast help.",
+    "subtitle": "Do you have a question? We are here",
+    "fields": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "E-mail",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Enter your name",
+      "phone": "Enter your phone number",
+      "email": "Enter your email",
+      "message": "Write your message"
+    },
+    "errors": {
+      "nameRequired": "Enter your name",
+      "nameMin": "Name must be at least 3 characters",
+      "phoneRequired": "Enter your phone number",
+      "phoneMin": "Phone number must be at least 9 characters",
+      "emailRequired": "Enter your email address",
+      "emailInvalid": "Enter a valid email",
+      "messageRequired": "Enter information about your request",
+      "messageMin": "Message must be at least 10 characters",
+      "submitError": "An error occurred, please try again",
+      "submitFailed": "Failed to send, please try again"
+    },
+    "submit": "Send",
+    "submitting": "Sending...",
+    "success": "Your request has been sent successfully!",
+    "error": "An error occurred, please try again"
+  }
+}

@@ -1,22 +1,23 @@
 import SectionTitle from "@/components/ui/text/section-title.text";
 import SectionName from "@/components/ui/text/section-name.text";
+import { IDoubleImageSection } from "@/types";
+import {getTranslations} from 'next-intl/server';
 
-
-function ThirdSection() {
+async function ThirdSection({data}: {data: IDoubleImageSection[]}) {
+    const t = await getTranslations('ThirdSection');
+    
     return (
         <section
             id={'third-section'}
             className={" mb-[40px] lg:mb-[100px]  lg:flex lg:items-center lg:justify-between lg:gap-16"}>
             <div className={'section-header md:max-w-2/3 lg:max-w-[464px]'}>
-                <SectionName className={'mb-2'}>Doğru icraçını seçin</SectionName>
+                <SectionName className={'mb-2'}>{t('subtitle')}</SectionName>
                 <SectionTitle className={'mb-4'}>
-                    Seçim tam olaraq sizə məxsusdur
-                    İşiniz üçün doğru icraçını seçin
-
+                    {t('title')}
                 </SectionTitle>
-                <p className={'text-[#00000099] leading-5 lg:leading-6 text-sm lg:text-[16px] '}>
-                  <span className={'font-semibold text-[#212121]'}>Helplly</span>-də işi paylaşdıqdan sonra bir neçə icraçıdan istək alırsınız. Onların məlumatlarını və əvvəlki fəaliyyətini nəzərdən keçirərək uyğun olanı seçirsiniz.
-                </p>
+                <div className={'text-[#00000099] leading-5 lg:leading-6 text-sm lg:text-[16px] '} dangerouslySetInnerHTML={{__html: data.at(0)?.description ?? ''}} />
+                  {/* <span className={'font-semibold text-[#212121]'}>Helplly</span>-də işi paylaşdıqdan sonra bir neçə icraçıdan istək alırsınız. Onların məlumatlarını və əvvəlki fəaliyyətini nəzərdən keçirərək uyğun olanı seçirsiniz.
+                </p> */}
             </div>
 
             <div className={'items-center grid grid-cols-2 gap-4 mt-[20px] lg:shrink-0  xl:w-[752px]'}>

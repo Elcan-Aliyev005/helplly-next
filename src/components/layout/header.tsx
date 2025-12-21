@@ -1,10 +1,13 @@
 import {Button, Select} from "@mantine/core"
 import {MobileSidebar} from "@/components/ui/sidebars/mobile.sidebar"
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import Nav from "@/components/layout/nav";
+import LanguageSwitcherMenu from "@/components/custom/language-switcher.menu";
+import {getTranslations} from 'next-intl/server';
 
-function Header() {
-
+async function Header() {
+    const t = await getTranslations('Header');
+    
     return (
         <header className="py-7 fixed z-[999] w-full bg-[#fff]  font-manrope">
 
@@ -19,25 +22,9 @@ function Header() {
                 </nav>
                 <div className="hidden lg:flex items-center gap-[12px]">
                     <Button className="!rounded-full  !border-[#212121] !py-3 !h-[48px] !px-[50px]" variant="default">
-                        <span className="font-normal text-[16px] leading-6">Yüklə</span>
+                        <span className="font-normal text-[16px] leading-6">{t('download')}</span>
                     </Button>
-                    <Select
-                        classNames={
-                            {
-                                input: "!h-[48px] !rounded-full !p-0 !text-center",
-                                dropdown: "!border-[#212121] !rounded-[10px] !z-[9999]",
-                                option:
-                                    "aria-[selected=true]:!bg-[#0F820F] aria-[selected=true]:!text-white",
-                            }}
-                        className="w-[48px]"
-                        defaultValue="AZ"
-                        data={["AZ", "EN", "RU"]}
-                        styles={{
-                            input: {
-                                border: "1px solid #212121",
-                            }
-                        }}
-                    />
+                    <LanguageSwitcherMenu className={'w-[50px] h-[50px]'}/>
 
                 </div>
                 <MobileSidebar/>

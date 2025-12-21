@@ -3,14 +3,15 @@ interface  Props{
     title:string,
     description:string
     id:number
+    index:number
 }
-function FourthSectionStepCard({title, description, id}:Props) {
+function FourthSectionStepCard({title, description, index, id}:Props) {
     return (
         <div className={'gap-3  flex items-center '}>
 
             <div className={'mb-4'}>
                 <div className={'icon-box inline-flex text-[18px] font-bold leading-6 items-center justify-center rounded-full  w-[40px] h-[40px] bg-[#F9F9F9] p-[6px]'}>
-                    {id}
+                        {index+1}
                 </div>
             </div>
            <div>

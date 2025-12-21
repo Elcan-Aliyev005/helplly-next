@@ -1,65 +1,11 @@
 "use client"
+import { IFaq } from '@/types';
 import {Accordion} from '@mantine/core';
 import {useState} from "react";
 
 
-export function  FaqAccordion() {
-    const data = [
-        {
-            id: 1,
-            question: "Helplly nədir?",
-            answer:
-                "Helplly ev təmiri, təmizlik, usta və digər gündəlik xidmətləri tez və rahat tapmaq üçün mobil platformadır.",
-        },
-        {
-            id: 2,
-            question: "Xidməti necə sifariş edə bilərəm?",
-            answer:
-                "Tətbiqdə xidməti seçin, qısa qeydinizi yazın, təklifləri müqayisə edin və icraçını təsdiqləyin.",
-        },
-        {
-            id: 3,
-            question: "Helplly-də hansı xidmətlər mövcuddur?",
-            answer:
-                "Ev təmiri, məişət xidmətləri, təmizlik, texniki dəstək və digər gündəlik ehtiyaclar.",
-        },
-        {
-            id: 4,
-            question: "Təklifləri necə müqayisə edə bilərəm?",
-            answer:
-                "Qiymət, məsafə və digər istifadəçi rəylərinə əsasən ən uyğun icraçını seçə bilərsiniz.",
-        },
-        {
-            id: 5,
-            question: "İcraçılar necə seçilir?",
-            answer:
-                "Bütün icraçılar platformamızda yoxlanılmış və real istifadəçi rəyləri ilə təsdiqlənmişdir.",
-        },
-        {
-            id: 6,
-            question: "Biznes hesabı açmaq mümkündürmü?",
-            answer:
-                "Bəli, xidmət göstərənlər profil yaradaraq müraciətləri qəbul edə və yeni müştərilər qazana bilər.",
-        },
-        {
-            id: 7,
-            question: "Mobil tətbiqin üstünlükləri nədir?",
-            answer:
-                "Sifarişlərinizi izləmək, müştərilərlə ünsiyyət qurmaq və ödənişləri bir yerdən idarə etmək mümkündür.",
-        },
-        {
-            id: 8,
-            question: "Xidmətin qiyməti necə müəyyən olunur?",
-            answer:
-                "Qiymət icraçı və ya siz tərəfdən təklif olunur, siz müqayisə edib ən uyğun təklifi seçirsiniz.",
-        },
-        {
-            id: 9,
-            question: "Helplly ilə işlərim nə qədər sürətli həll olunur?",
-            answer:
-                "Sifarişdən sonra yaxın icraçılar dərhal təklif göndərir, iş vaxtında və şərtlərə uyğun tamamlanır.",
-        },
-    ];
+
+export function  FaqAccordion({data}:{data:IFaq[]}) {
 
 
 
@@ -76,9 +22,7 @@ export function  FaqAccordion() {
                 </div>
             </Accordion.Control>
             <Accordion.Panel>
-                <p className={'leading-6 text-sm lg:text-[16px] text-[#1A1A1AAD]'}>
-                    {item.answer}
-                </p>
+                <div dangerouslySetInnerHTML={{__html: item.answer}} className={'leading-6 text-sm lg:text-[16px] text-[#1A1A1AAD]'}/>
             </Accordion.Panel>
         </Accordion.Item>
     ))

@@ -1,15 +1,18 @@
 "use client"
 import {useDisclosure} from "@mantine/hooks";
 import {Drawer} from "@mantine/core";
-import Link from "next/link";
+import {Link, usePathname} from "@/i18n/navigation";
 import Nav from "@/components/layout/nav";
-import {usePathname} from "next/navigation";
 import {menuList} from "@/const/index.const";
 import SocialMediaLinks from "@/components/custom/social-media.links";
+import LanguageSwitcherMenu from "@/components/custom/language-switcher.menu";
+import {useTranslations} from 'next-intl';
 
 export function MobileSidebar() {
     const [opened, {open, close}] = useDisclosure(false);
-const pathname= usePathname()
+    const pathname= usePathname();
+    const t = useTranslations('Nav');
+    
     return (
         <div className="lg:hidden">
 
@@ -57,16 +60,17 @@ const pathname= usePathname()
                    <ul className="space-y-4 text-[18px] pt-[32px] font-medium text-[#212121E3]">
                        <Nav list={menuList.slice(1)} onClick={close}/>
                        <li onClick={close}  className={`text-black hover:text-[#0F820F] transition-colors ${pathname == '/privacy-and-policy' && '!text-[#0F820F]' } cursor-pointer`}>
-                           <Link href={'/privacy-and-policy'}>Privacy Policy</Link>
+                           <Link href={'/privacy-and-policy'}>{t('privacyPolicy')}</Link>
                        </li>
                        <li onClick={close} className={`text-black hover:text-[#0F820F] transition-colors ${pathname == '/terms-of-service' && '!text-[#0F820F]' } cursor-pointer`}>
-                           <Link href={'/terms-of-service'}>Terms of Service</Link>
+                           <Link href={'/terms-of-service'}>{t('termsOfService')}</Link>
                        </li>
                    </ul>
 
 
-                   <div className={'absolute py-[18px]  bottom-0'}>
+                   <div className={'absolute flex items-center left-0 right-0 px-4 max-w-full justify-between py-[18px]  bottom-0'}>
                       <SocialMediaLinks/>
+                       <LanguageSwitcherMenu className={'!w-[38px] !h-[38px]'}/>
                    </div>
 
 

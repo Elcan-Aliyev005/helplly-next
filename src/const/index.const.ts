@@ -1,4 +1,4 @@
-import type {IMenuItems} from "../types";
+import type {IHomePageData, IMenuItems} from "../types";
 
 export const menuList: IMenuItems[] = [
     {
@@ -147,8 +147,9 @@ export const footerData = {
         {
             title: "Əlaqə",
             links: [
-                { label: "+994 (55) 111 11 11", href: "tel:+994551111111" },
                 { label: "heplly@gmail.com", href: "mailto:heplly@gmail.com" },
+                { label: "№ VÖEN:1407394761", href: "/" },
+                { label: "Azərbaycan,Bakı", href: "https://maps.app.goo.gl/rFN8JNvLUYwe2TQZ7" },
             ],
         },
         {
@@ -180,3 +181,15 @@ export const statisticsData = [
         text: "Məmnun istifadəçi",
     },
 ];
+ export const initialHomePageData: IHomePageData = {
+    sliders: [{id: 0, title: '', description: '', image: '',}],
+    about: {title: '', content: ''},
+    faqs: [],
+    sections1: [],
+    sections2: [],
+    sections3: [],
+    sections4: [],
+    sections5: [],
+    sections6: [{id: 0, title: '', description: '', image: '', contents: []}],
+    menu: menuList
+};

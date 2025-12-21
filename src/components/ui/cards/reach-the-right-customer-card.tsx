@@ -13,7 +13,7 @@ function ReachTheRightCustomerCard({title, description, icon}:Props) {
                 </div>
             </div>
             <h3 className={' text-[16px] lg:text-[19px]   mb-2  2xl:w-4/5 text-[#1A1A1A] font-semibold leading-6'}>{title}</h3>
-            <p className={'text-[#1A1A1AAD] leading-6 text-sm  lg:text-[16px]'}>{description}</p>
+            <div className={'text-[#1A1A1AAD] leading-6 text-sm  lg:text-[16px]'} dangerouslySetInnerHTML={{__html: description}} />
 
         </div>
     )

@@ -2,9 +2,11 @@ import SectionTitle from "@/components/ui/text/section-title.text";
 import {fourthSectionStepsData} from "@/const/index.const";
 import FourthSectionStepCard from "@/components/ui/cards/fourth-section-step-card.card";
 import SectionName from "@/components/ui/text/section-name.text";
+import { ISection6, ISection6Content } from "@/types";
 
 
-function FourthSection() {
+
+function FourthSection({data}: {data: ISection6[]}) {
     return (
         <section
             id={'fourth-section'}
@@ -18,16 +20,14 @@ function FourthSection() {
             <div className={'section-header  text-left'}>
                 <SectionName className={'mb-2'}>Niyə Helplly ilə xidmət axtarmalısınız?</SectionName>
                 <SectionTitle className={'mb-2 text-[#1A1A1A]'}>
-                    Xidmət axtaranların üstünlükləri
+                        {data.at(0)?.title ?? ''}
                 </SectionTitle>
-                <p className={'text-[#000000AD]  leading-6 text-sm lg:text-[16px] '}>
-                    Xidmətlərinizi müştərilərə təqdim etmək indi daha asandır!
-                </p>
-
+                <div dangerouslySetInnerHTML={{__html: data.at(0)?.description ?? ''}} className={'text-[#000000AD]  leading-6 text-sm lg:text-[16px] '}/>
+            
                 <div className={'mt-6 grid grid-cols-1 gap-5'}>
-                    {fourthSectionStepsData.map((item)=>{
+                    {data.at(0)?.contents.map((item: ISection6Content, index: number)=>{
                         return(
-                            <FourthSectionStepCard key={item.id} {...item}/>
+                            <FourthSectionStepCard key={item.id} index={index} {...item}/>
                         )
                     })}
                 </div>

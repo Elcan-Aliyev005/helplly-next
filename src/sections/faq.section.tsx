@@ -1,16 +1,20 @@
 import {FaqAccordion} from "@/components/ui/accordions/faq.accordion";
 import SectionTitle from "@/components/ui/text/section-title.text";
+import {IFaq} from "@/types";
+import {getTranslations} from 'next-intl/server';
 
-function FaqSection() {
+async function FaqSection({data}:{data:IFaq[]}) {
+    const t = await getTranslations('FaqSection');
+    
     return (
         <section id={'faq'} className={"pb-[25px] scroll-mt-[120px] lg:pb-[100px] pt-[25px]"}>
             <SectionTitle className={'mb-8'}>
-                Tez-Tez Verilən Suallar
+                {t('title')}
             </SectionTitle>
 
 
             <div>
-                <FaqAccordion/>
+                <FaqAccordion data={data}/>
             </div>
         </section>
     )

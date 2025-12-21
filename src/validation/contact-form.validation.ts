@@ -1,21 +1,39 @@
 import { z } from "zod";
 
-export const contactFormSchema = z.object({
-    name: z
-        .string('Adınızı daxil edin')
-        .min(2, "Ad minimum 2 simvol olmalıdır"),
+export type ContactFormErrorMessages = {
+    nameRequired: string;
+    nameMin: string;
+    phoneRequired: string;
+    phoneMin: string;
+    emailRequired: string;
+    emailInvalid: string;
+    messageRequired: string;
+    messageMin: string;
+};
 
-    email: z
-        .string('E-mail ünvanınızı daxil edin')
-        .email("Düzgün e-mail daxil edin"),
+export const createContactFormSchema = (messages: ContactFormErrorMessages) => {
+    return z.object({
+        name: z
+            .string(messages.nameMin)
+            .min(3, messages.nameMin),
 
-    subject: z
-        .string('Mövzunu qeyd edin')
-        .min(3, "Mövzu minimum 3 simvol olmalıdır"),
+        phone_number: z
+            .string(messages.phoneMin)
+            .min(9, messages.phoneMin),
 
-    message: z
-        .string("Müraciətinizlə bağlı məlumatı qeyd edin")
-        .min(10, "Mesaj minimum 10 simvol olmalıdır"),
-});
+        email: z
+            .string(messages.emailInvalid)
+            .email(messages.emailInvalid),
 
-export type ContactFormValues = z.infer<typeof contactFormSchema>;
+        text: z
+            .string(messages.messageMin)
+            .min(10, messages.messageMin),
+    });
+};
+
+export type ContactFormValues = {
+    name: string;
+    phone_number: string;
+    email: string;
+    text: string;
+};

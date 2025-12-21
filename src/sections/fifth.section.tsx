@@ -3,23 +3,27 @@ import SectionTitle from "@/components/ui/text/section-title.text";
 import HowDoesItWorkCard from "@/components/ui/cards/how-does-it-work.card";
 import {fifthSectionData} from "@/const/index.const";
 import SectionName from "@/components/ui/text/section-name.text";
+import { ITextSection } from "@/types";
+import {getTranslations} from 'next-intl/server';
 
-function FifthSection() {
+async function FifthSection({data}: {data: ITextSection[]}) {
+    const t = await getTranslations('FifthSection');
+    
     return (
         <section
             id={'why-us'}
             className={"pb-[15px] scroll-mt-[100px] lg:pb-[75px] pt-[25px]"}>
             <div className={'section-header text-center'}>
-               <SectionName className={'justify-center'}>Helplly sizə nə qazandırır?</SectionName>
+               <SectionName className={'justify-center'}>{t('subtitle')}</SectionName>
                 <SectionTitle className={'mt-3  px-3'}>
-                    İcraçılar üçün üstünlüklər
+                    {t('title')}
                 </SectionTitle>
             </div>
             <div className={"how-does-it-work-cards mt-[24px] lg:mt-[36px] grid grid-cols-1 items-start  md:grid-cols-2  lg:grid-cols-3 gap-5"}>
                 <div className={'grid grid-cols-1 gap-5'}>
-                    {fifthSectionData.slice(0, 2).map((data, index) => {
+                    {data.slice(0, 2).map((item, index) => {
                         return (
-                            <HowDoesItWorkCard key={index} {...data} />
+                            <HowDoesItWorkCard key={index} {...item} />
                         )
                     })}
                 </div>
@@ -27,16 +31,16 @@ function FifthSection() {
                     <div className={"hidden lg:block"}>
                         <img className={'2xl:w-full 2xl:max-h-[347px] object-cover object-top rounded-[12px]'} src={'/img/men.svg'} alt={'men'}/>
                     </div>
-                    {fifthSectionData.slice(2, 3).map((data, index) => {
+                    {data.slice(2, 3).map((item, index) => {
                         return (
-                            <HowDoesItWorkCard key={index} {...data} />
+                            <HowDoesItWorkCard key={index} {...item} />
                         )
                     })}
                 </div>
                 <div className={'grid grid-cols-1 gap-5'}>
-                    {fifthSectionData.slice(3, 5).map((data, index) => {
+                    {data.slice(3, 5).map((item, index) => {
                         return (
-                            <HowDoesItWorkCard key={index} {...data} />
+                            <HowDoesItWorkCard key={index} {...item} />
                         )
                     })}
                 </div>
