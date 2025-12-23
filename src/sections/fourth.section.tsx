@@ -3,10 +3,12 @@ import {fourthSectionStepsData} from "@/const/index.const";
 import FourthSectionStepCard from "@/components/ui/cards/fourth-section-step-card.card";
 import SectionName from "@/components/ui/text/section-name.text";
 import { ISection6, ISection6Content } from "@/types";
+import {getTranslations} from 'next-intl/server';
 
 
 
-function FourthSection({data}: {data: ISection6[]}) {
+async function FourthSection({data}: {data: ISection6[]}) {
+    const t = await getTranslations('FourthSection');
     return (
         <section
             id={'fourth-section'}
@@ -18,7 +20,7 @@ function FourthSection({data}: {data: ISection6[]}) {
             </div>
 
             <div className={'section-header  text-left'}>
-                <SectionName className={'mb-2'}>Niyə Helplly ilə xidmət axtarmalısınız?</SectionName>
+                <SectionName className={'mb-2'}>{t('title')}</SectionName>
                 <SectionTitle className={'mb-2 text-[#1A1A1A]'}>
                         {data.at(0)?.title ?? ''}
                 </SectionTitle>

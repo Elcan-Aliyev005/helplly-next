@@ -139,24 +139,24 @@ export const footerData = {
             title: "Şirkət",
             links: [
                 { label: "Haqqımızda", href: "/#why-us" },
-                { label: "İstifadəçi şərtləri", href: "/terms-of-service" },
-                { label: "Bizimlə əlaqə", href: "/#contact" },
+                { label: "Biznes", href: "/#business" },
+                { label: "Niyə biz?", href: "/#why-us" },
                 { label: "Tez-tez verilən suallar", href: "/#faq" },
             ],
         },
         {
             title: "Əlaqə",
             links: [
-                { label: "heplly@gmail.com", href: "mailto:heplly@gmail.com" },
+                { label: "helpllyservice@gmail.com", href: "mailto:helpllyservice@gmail.com" },
                 { label: "№ VÖEN:1407394761", href: "/" },
-                { label: "Azərbaycan,Bakı", href: "https://maps.app.goo.gl/rFN8JNvLUYwe2TQZ7" },
+                { label: "Azərbaycan, Bakı", href: "https://maps.app.goo.gl/rFN8JNvLUYwe2TQZ7" },
             ],
         },
         {
-            title: "Policies",
+            title: "Məxfilik siyasəti",
             links: [
-                { label: "Privacy Policy", href: "/privacy-and-policy" },
-                { label: "Terms of Service", href: "/terms-of-service" },
+                { label: "İstifadə şərtləri", href: "/terms-of-service" },
+                { label: "Məxfilik Siyasəti", href: "/privacy-and-policy" },
             ],
         },
     ],

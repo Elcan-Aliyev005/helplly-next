@@ -18,6 +18,10 @@ async function ThirdSection({data}: {data: IDoubleImageSection[]}) {
                 <div className={'text-[#00000099] leading-5 lg:leading-6 text-sm lg:text-[16px] '} dangerouslySetInnerHTML={{__html: data.at(0)?.description ?? ''}} />
                   {/* <span className={'font-semibold text-[#212121]'}>Helplly</span>-də işi paylaşdıqdan sonra bir neçə icraçıdan istək alırsınız. Onların məlumatlarını və əvvəlki fəaliyyətini nəzərdən keçirərək uyğun olanı seçirsiniz.
                 </p> */}
+
+{/* <div className={'text-[#00000099] leading-5 lg:leading-6 text-sm lg:text-[16px] '}>
+                    {t('description')}
+                </div> */}
             </div>
 
             <div className={'items-center grid grid-cols-2 gap-4 mt-[20px] lg:shrink-0  xl:w-[752px]'}>

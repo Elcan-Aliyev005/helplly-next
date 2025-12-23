@@ -6,7 +6,7 @@ import {toFormikValidationSchema} from "zod-formik-adapter";
 import {createContactFormSchema, ContactFormValues} from "@/validation/contact-form.validation";
 import Link from "next/link";
 import {useLocale, useTranslations} from 'next-intl';
-import {useState} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import {IMaskInput} from 'react-imask';
 import {notifications} from '@mantine/notifications';
 
@@ -15,6 +15,38 @@ export default function FormModal() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const locale = useLocale();
     const t = useTranslations('ContactForm');
+    const overlayRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (opened) {
+            const handleClickOutside = (event: MouseEvent) => {
+                const target = event.target as HTMLElement;
+                // Check if click is on overlay (inner div) but not on modal content
+                const modalContent = document.querySelector('.mantine-Modal-content');
+                
+                if (modalContent && target) {
+                    // Check if click is NOT on modal content (i.e., on overlay)
+                    if (!modalContent.contains(target)) {
+                        // Check if target is part of the modal structure
+                        const innerDiv = target.closest('.mantine-Modal-inner');
+                        if (innerDiv) {
+                            close();
+                        }
+                    }
+                }
+            };
+
+            // Add event listener after a small delay to ensure modal is rendered
+            const timeoutId = setTimeout(() => {
+                document.addEventListener('click', handleClickOutside, true);
+            }, 100);
+
+            return () => {
+                clearTimeout(timeoutId);
+                document.removeEventListener('click', handleClickOutside, true);
+            };
+        }
+    }, [opened, close]);
     
     const contactFormSchema = createContactFormSchema({
         nameRequired: t('errors.nameRequired'),
@@ -37,6 +69,7 @@ export default function FormModal() {
         <>
             <Modal.Root
                 lockScroll={false}
+                closeOnClickOutside={true}
                 transitionProps={{
                     transition: {
                         in: {
@@ -66,7 +99,7 @@ export default function FormModal() {
                     inner: {
                         padding: 0,
                         margin: 0,
-                        pointerEvents: "none",
+                        pointerEvents: "auto",
                     },
                     content: {
                         pointerEvents: "auto",

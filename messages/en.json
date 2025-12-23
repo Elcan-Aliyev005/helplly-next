@@ -38,9 +38,9 @@
     "download": "Download"
   },
   "BusinessSection": {
-    "selectRole": "Select your role",
-    "title": "Choose your role on the platform and get started",
-    "subtitle": "Choose the most suitable service without wasting your time – compare available options and quickly connect with professionals.",
+    "selectRole": "Choose the right executor",
+    "title": "The choice is entirely yours",
+    "subtitle": "Share your needs without wasting time or manage the process easily by sending requests for shared tasks.",
     "services": {
       "executor": {
         "title": "Executor",
@@ -65,10 +65,21 @@
   },
   "ThirdSection": {
     "subtitle": "Choose the right executor",
-    "title": "The choice is entirely yours Choose the right executor for your job"
+    "title": "People who experience time constraints in their daily work",
+    "description": "After sharing the job on Helplly, you receive requests from several executors. Review their information and previous activities to select the most suitable one."
   },
   "WhoIsExecutorSection": {
     "title": "Who is an executor?"
+  },
+  "HowDoesItWorkSection": {
+    "titlePart1": "Service seeking",
+    "titlePart2": "users are who?"
+  },
+  "FourthSection": {
+    "title": "Why should you seek services with Helplly?"
+  },
+  "MoodboardSection": {
+    "startNow": "Start now"
   },
   "LanguageSwitcher": {
     "az": "Azerbaijani",

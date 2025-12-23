@@ -2,22 +2,23 @@ import TitleBadge from "@/components/ui/badge/title.badge";
 import SectionTitle from "@/components/ui/text/section-title.text";
 import HowDoesItWorkCard from "@/components/ui/cards/how-does-it-work.card";
 import {howDoesItWorkData} from "@/const/index.const";
-import SectionName from "@/components/ui/text/section-name.text";
+import {getTranslations} from 'next-intl/server';
+
 import { ITextSection } from "@/types";
 
-function HowDoesItWorkSection({data}: {data: ITextSection[]}) {
+async function HowDoesItWorkSection({data}: {data: ITextSection[]}) {
+    const t = await getTranslations('HowDoesItWorkSection');
+    
     return (
         <section
             id={'helplly'}
             className={"py-6  scroll-mt-[120px]  lg:py-8 mb-[40px] lg:mb-[100px]"}>
             <div className={'section-header text-center'}>
-                <SectionName className={'justify-center'}>
-                    Xidmət axtaranlar
-                </SectionName>
+
                 <SectionTitle className={'mt-3 px-3'}>
-                    Xidmət axtaran
+                    {t('titlePart1')}
                     <br/>
-                    istifadəçilər kimlərdir?
+                    {t('titlePart2')}
                 </SectionTitle>
             </div>
             <div className={"how-does-it-work-cards mt-[24px] lg:mt-[36px] grid grid-col-1 lg:grid-cols-3 gap-5"}>

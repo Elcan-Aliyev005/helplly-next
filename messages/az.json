@@ -38,9 +38,9 @@
     "download": "Yüklə"
   },
   "BusinessSection": {
-    "selectRole": "Rolunuzu seçin",
-    "title": "Platformada öz rolunuzu seçin və işə başlayın",
-    "subtitle": "Vaxtınızı xərcləmədən ən uyğun xidməti seçin – mövcud variantları müqayisə edin və sürətlə peşəkarlarla əlaqə qurun.",
+    "selectRole": "Doğru icraçını seçin",
+    "title": "Seçim tam olaraq sizə məxsusdur",
+    "subtitle": "Vaxt itirmədən ehtiyacınızı paylaşın və ya paylaşılan işlərə istək göndərərək prosesi rahat şəkildə idarə edin.",
     "services": {
       "executor": {
         "title": "İcraçı",
@@ -65,10 +65,21 @@
   },
   "ThirdSection": {
     "subtitle": "Doğru icraçını seçin",
-    "title": "Seçim tam olaraq sizə məxsusdur İşiniz üçün doğru icraçını seçin"
+    "title": "Gündəlik işlərində vaxt məhdudiyyəti yaşayan şəxslər",
+    "description": "Helplly-də işi paylaşdıqdan sonra bir neçə icraçıdan istək alırsınız. Onların məlumatlarını və əvvəlki fəaliyyətini nəzərdən keçirərək uyğun olanı seçirsiniz."
   },
   "WhoIsExecutorSection": {
     "title": "İcraçı kimdir?"
+  },
+  "HowDoesItWorkSection": {
+    "titlePart1": "Xidmət axtaran",
+    "titlePart2": "istifadəçilər kimlərdir?"
+  },
+  "FourthSection": {
+    "title": "Niyə Helplly ilə xidmət axtarmalısınız?"
+  },
+  "MoodboardSection": {
+    "startNow": "İndi başlayın"
   },
   "LanguageSwitcher": {
     "az": "Azərbaycan",
