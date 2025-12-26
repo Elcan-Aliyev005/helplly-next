@@ -9,7 +9,7 @@ interface Props {
 function HowDoesItWorkCard({title, index, type = "with-bg-color", description}: Props) {
 
     const style = {
-        backgroundImage: `url('/img/article-bg${index}.svg')`,
+        backgroundImage: `url('/img/article-bg${3}.svg')`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
