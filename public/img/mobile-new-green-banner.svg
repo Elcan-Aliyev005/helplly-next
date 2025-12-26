@@ -1,0 +1,19 @@
+<svg width="343" height="384" viewBox="0 0 343 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1098_1346)">
+<path d="M0 39C0 17.4609 17.4609 0 39 0H304C325.539 0 343 17.4609 343 39V345C343 366.539 325.539 384 304 384H39C17.4609 384 0 366.539 0 345V39Z" fill="url(#paint0_linear_1098_1346)"/>
+<ellipse cx="172" cy="-313" rx="602" ry="496" fill="url(#paint1_radial_1098_1346)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1098_1346" x1="125.811" y1="531.489" x2="444.34" y2="137.226" gradientUnits="userSpaceOnUse">
+<stop stop-color="#108910"/>
+<stop offset="1" stop-color="#43C143"/>
+</linearGradient>
+<radialGradient id="paint1_radial_1098_1346" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(172 -313) rotate(90) scale(496 602)">
+<stop offset="0.125" stop-color="#0F820F"/>
+<stop offset="1" stop-color="#30AB30"/>
+</radialGradient>
+<clipPath id="clip0_1098_1346">
+<path d="M0 39C0 17.4609 17.4609 0 39 0H304C325.539 0 343 17.4609 343 39V345C343 366.539 325.539 384 304 384H39C17.4609 384 0 366.539 0 345V39Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -2,7 +2,7 @@ import type {IHomePageData, IMenuItems} from "../types";
 
 export const menuList: IMenuItems[] = [
     {
-        path: "#helplly",
+        path: "#about",
         name: "Helplly"
     },
     {

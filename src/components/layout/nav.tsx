@@ -22,7 +22,7 @@ function Nav({list=menuList, ...props}: Props) {
 
     const getTranslationKey = (path: string) => {
         const keyMap: Record<string, string> = {
-            '#helplly': 'helplly',
+            '#about': 'helplly',
             '#business': 'business',
             '#why-us': 'whyUs',
             '#faq': 'faq',

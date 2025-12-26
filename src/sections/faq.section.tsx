@@ -7,14 +7,16 @@ async function FaqSection({data}:{data:IFaq[]}) {
     const t = await getTranslations('FaqSection');
     
     return (
-        <section id={'faq'} className={"pb-[25px] scroll-mt-[120px] lg:pb-[100px] pt-[25px]"}>
-            <SectionTitle className={'mb-8'}>
-                {t('title')}
-            </SectionTitle>
+        <section className={'mx-auto container'}>
+            <div id={'faq'} className={"pb-[25px] scroll-mt-[120px] lg:pb-[100px] pt-[25px]"}>
+                <SectionTitle className={'mb-8'}>
+                    {t('title')}
+                </SectionTitle>
 
 
-            <div>
-                <FaqAccordion data={data}/>
+                <div>
+                    <FaqAccordion data={data}/>
+                </div>
             </div>
         </section>
     )

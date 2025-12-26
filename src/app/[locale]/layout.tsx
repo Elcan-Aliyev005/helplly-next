@@ -53,7 +53,7 @@ export default async function LocaleLayout({
             <MantineProvider>
                 <NotificationsProvider  />
                 {await Header()}
-                <main className="container pt-[101px] lg:pt-[104px] mx-auto">
+                <main className=" pt-[101px] lg:pt-[114px] ">
                     {children}
                 </main>
                 <Footer/>

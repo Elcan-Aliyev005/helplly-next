@@ -10,23 +10,25 @@ async function ReachTheRightCustomerSection({data}: {data: IIconSection[]}) {
     const t = await getTranslations('ReachTheRightCustomerSection');
     
     return (
-        <section
-            id={'business'}
-            className={"pb-[15px] scroll-mt-[100px] lg:pb-[75px] pt-[25px]"}>
-            <div className={'section-header text-center'}>
-                <SectionName  className={'mb-2 justify-center'}>{t('subtitle')}</SectionName>
-                <SectionTitle className={'mt-0 px-3'}>
-                    {t('title')}
-                </SectionTitle>
-            </div>
-            <div className={"reach-the-right-customer-cards mt-[24px] grid grid-cols-1 md:grid-cols-2 gap-5 xl:grid-cols-4 lg:mt-[36px] "}>
-                {data.map((item, index) => {
-                    return (
-                        <ReachTheRightCustomerCard key={index} {...item} />
-                    )
-                })}
-            </div>
-        </section>
+       <section className={'mx-auto container'}>
+           <div
+               id={'business'}
+               className={"pb-[15px] scroll-mt-[100px] lg:pb-[75px] pt-[25px]"}>
+               <div className={'section-header text-center'}>
+                   <SectionName  className={'mb-2 justify-center'}>{t('subtitle')}</SectionName>
+                   <SectionTitle className={'mt-0 px-3'}>
+                       {t('title')}
+                   </SectionTitle>
+               </div>
+               <div className={"reach-the-right-customer-cards mt-[24px] grid grid-cols-1 md:grid-cols-2 gap-5 xl:grid-cols-4 lg:mt-[36px] "}>
+                   {data.map((item, index) => {
+                       return (
+                           <ReachTheRightCustomerCard key={index} {...item} />
+                       )
+                   })}
+               </div>
+           </div>
+       </section>
     )
 }
 

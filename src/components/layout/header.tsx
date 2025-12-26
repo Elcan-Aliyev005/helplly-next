@@ -21,7 +21,7 @@ async function Header() {
                     </ul>
                 </nav>
                 <div className="hidden lg:flex items-center gap-[12px]">
-                    <Button className="!rounded-full  !border-[#212121] !py-3 !h-[48px] !px-[50px]" variant="default">
+                    <Button className="!rounded-full  hover:!bg-[#040404] hover:!text-[#fff] transition-all duration-400 !border-[#212121] !py-3 !h-[48px] !px-[50px]" variant="default">
                         <span className="font-normal text-[16px] leading-6">{t('download')}</span>
                     </Button>
                     <LanguageSwitcherMenu className={'w-[50px] h-[50px]'}/>
