@@ -63,3 +63,41 @@ html{
 .mantine-Notification-root {
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
+
+
+/* CARD */
+.business-card {
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    transition: background-color 0.6s ease, border-color 0.6s ease;
+}
+
+@media (hover: hover) {
+    .business-card:hover {
+        background-color: rgba(16, 137, 16, 0.04);
+        border-color: #108910;
+    }
+}
+
+.business-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    background: #212121;
+    display: grid;
+    place-items: center;
+
+    transform: rotate(0deg);
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease;
+}
+
+@media (hover: hover) {
+    .business-card:hover .business-card__icon {
+        transform: rotate(359deg);
+        background-color: #108910;
+    }
+}
