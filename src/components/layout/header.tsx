@@ -16,7 +16,7 @@ async function Header() {
                     <Link href={'/'}>
                         <img src="/img/mobile-logo.svg" alt="logo"/>
                     </Link>
-                    <ul className="hidden lg:flex gap-10">
+                    <ul className="hidden lg:flex items-center gap-4 xl:gap-10">
                         <Nav/>
                     </ul>
                 </nav>

@@ -179,9 +179,16 @@ export const footerData = {
             titleKey: "contact",
             links: [
                 {
-                    labelKey: "contact",
+                    labelKey: "email",
                     href: "mailto:helpllyservice@gmail.com"
-                }
+                }  ,{
+                    labelKey: "voen",
+                    href: "#contact"
+                }, {
+                    labelKey: "location",
+                    href: "https://maps.app.goo.gl/54QxWrUk2KMk6e4q9"
+                },
+
             ]
         },
         {

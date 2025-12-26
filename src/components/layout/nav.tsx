@@ -47,7 +47,7 @@ function Nav({ list = menuList, onClick }: Props) {
             router.push("/" + hash);
         }
 
-        setActiveHash(hash);
+        // setActiveHash(hash);
         onClick?.();
     };
 
@@ -62,9 +62,10 @@ function Nav({ list = menuList, onClick }: Props) {
                             href={pathname === "/" ? link.path : "/" + link.path}
                             onClick={(e) => handleClick(e, link.path)}
                             className={
-                                isActive
+                                ` transition-all
+                                ${isActive
                                     ? "text-[#0F820F] text-[18px] font-medium"
-                                    : "text-black hover:text-[#0F820F]"
+                                    : "text-black hover:text-[#0F820F]"}`
                             }
                         >
                             {t(getTranslationKey(link.path))}

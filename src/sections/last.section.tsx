@@ -1,4 +1,5 @@
 import {getTranslations} from 'next-intl/server';
+import Link from "next/link";
 
 async function LastSection() {
     const t = await getTranslations('LastSection');
@@ -21,8 +22,9 @@ async function LastSection() {
                     </p>
 
                     <div className={'flex items-center  pb-2 lg:pb-[14px] gap-[8px]'}>
-                        <img src={'/img/store.svg'} alt={"store"}/>
-                        <img src={'/img/apple.svg'} alt={"apple"}/>
+                        <Link href={'https://www.apple.com/app-store/'} target={'_blank'}><img src={'/img/store.svg'} alt={"store"}/></Link>
+                        <Link target={"_blank"} href={'https://play.google.com/store/'}> <img src={'/img/apple.svg'} alt={"apple"}/></Link>
+
 
                     </div>
                 </div>

@@ -58,7 +58,7 @@ export function MobileSidebar() {
 
                <div className={''}>
                    <ul className="space-y-4 text-[18px] pt-[32px] font-medium text-[#212121E3]">
-                       <Nav list={menuList.slice(1)} onClick={close}/>
+                       <Nav list={menuList} onClick={close}/>
                        <li onClick={close}  className={`text-black hover:text-[#0F820F] transition-colors ${pathname == '/privacy-and-policy' && '!text-[#0F820F]' } cursor-pointer`}>
                            <Link href={'/privacy-and-policy'}>{t('privacyPolicy')}</Link>
                        </li>

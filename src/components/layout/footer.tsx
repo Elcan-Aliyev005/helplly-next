@@ -1,9 +1,9 @@
 'use client'
-import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { Activity } from "react";
-import { footerData } from "@/const/index.const";
+import {Link, usePathname, useRouter} from "@/i18n/navigation";
+import {Activity} from "react";
+import {footerData} from "@/const/index.const";
 import SocialMediaLinks from "@/components/custom/social-media.links";
-import { useTranslations } from 'next-intl';
+import {useTranslations} from 'next-intl';
 
 function Footer() {
     const pathname = usePathname();
@@ -28,14 +28,14 @@ function Footer() {
                 {/* Logo + Description */}
                 <nav className="py-6 lg:px-6 lg:py-9 text-center lg:text-left">
                     <Link className="inline-block" href="/">
-                        <img src="/img/mobile-logo.svg" alt="logo" />
+                        <img src="/img/mobile-logo.svg" alt="logo"/>
                     </Link>
 
                     <p className="leading-4 mb-3 text-xs md:text-sm md:leading-6 max-w-[293px] md:mt-[6px] mx-auto lg:mx-0 text-[#00000061]">
                         {t('description')}
                     </p>
                     <div className="lg:block flex justify-center">
-                        <SocialMediaLinks />
+                        <SocialMediaLinks/>
                     </div>
                 </nav>
                 <div className="text-center lg:flex gap-15 text-sm lg:px-6 lg:py-9 text-[#00000099] space-y-7 pb-10">
@@ -59,13 +59,14 @@ function Footer() {
                                         >
                                             <Link
                                                 href={link.href}
+                                                target={link.labelKey == 'location' ? "_blank" : "_self"}
                                                 onClick={
                                                     !isExternal
                                                         ? (e) => handleHashLinkClick(e, link.href)
                                                         : undefined
                                                 }
                                             >
-                                                {t(`links.${link.labelKey}`)}
+                                                {link.labelKey !== 'email' ? t(`links.${link.labelKey}`) : 'helpllyservice@gmail.com'}
                                             </Link>
                                         </li>
                                     );
@@ -76,14 +77,15 @@ function Footer() {
                     {pathname !== "/" && (
                         <Activity mode="visible">
                             <div className="flex lg:hidden justify-center gap-3 pt-4">
-                                <img src="/img/store.svg" alt="App Store" className="h-[40px]" />
-                                <img src="/img/apple.svg" alt="Google Play" className="h-[40px]" />
+                                <img src="/img/store.svg" alt="App Store" className="h-[40px]"/>
+                                <img src="/img/apple.svg" alt="Google Play" className="h-[40px]"/>
                             </div>
                         </Activity>
                     )}
                 </div>
             </div>
-            <div className="hidden text-sm leading-6 lg:container lg:mx-auto border-t border-[#EBEBEB] text-[#00000061] lg:block pt-6 pb-8 px-6">
+            <div
+                className="hidden text-sm leading-6 lg:container lg:mx-auto border-t border-[#EBEBEB] text-[#00000061] lg:block pt-6 pb-8 px-6">
                 <p>{t('copyright')}</p>
             </div>
         </footer>
