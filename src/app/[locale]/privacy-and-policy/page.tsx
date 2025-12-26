@@ -55,7 +55,7 @@ async function PrivacyPage({
     }
 
     return (
-        <div className={'min-h-[70vh] px-4'}>
+        <div className={'min-h-[70vh] container mx-auto px-4'}>
             <ScrollToTopClient/>
             <div className={'bg-[#E7F3E7] rounded-[12px] px-4 md:px-6 py-8'}>
                 <Link className={'inline-block mb-3'} href={"/"}>
