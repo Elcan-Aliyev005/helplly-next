@@ -26,16 +26,16 @@ export default async function HomePage({
     params: Promise<{ locale: string }>
 }) {
     const { locale } = await params;
-    
+
     let data: IHomePageData = initialHomePageData;
-    
+
     try {
         const apiKey = process.env.NEXT_PUBLIC_API_KEY || process.env.API_KEY;
         const requestLang = locale || 'az';
-        
+
         if (!apiKey) {
             return (
-                <div className={'px-4'}>
+                <div className={''}>
                     <MoodboardSection data={initialHomePageData.sliders[0]}/>
                     <AboutSection data={initialHomePageData.about}/>
                     {await BusinessSection()}
@@ -55,10 +55,10 @@ export default async function HomePage({
             'lang': requestLang,
             'x-api-key': apiKey,
         };
-        
+
         const timestamp = Date.now();
         const urlWithCacheBuster = `https://back.helplly.com/api/index?_t=${timestamp}&_locale=${requestLang}`;
-        
+
         const res = await fetch(urlWithCacheBuster, {
             headers: requestHeaders,
             cache: 'no-store',
@@ -72,11 +72,11 @@ export default async function HomePage({
         const responseData = await res.json();
         data = responseData.data || initialHomePageData;
     } catch (error) {
-       
+
     }
-    
+
     return (
-        <div className={'px-4'}>
+        <div className={''}>
             <HashScrollClient/>
             <MoodboardSection data={data?.sliders?.at(0) ?? {title: '', description: '', image: ''}}/>
             <AboutSection data={data?.about ?? {title:"",description:""}}/>

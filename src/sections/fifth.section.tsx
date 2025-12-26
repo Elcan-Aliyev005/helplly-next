@@ -10,7 +10,7 @@ async function FifthSection({data}: { data: ITextSection[] }) {
     const t = await getTranslations('FifthSection');
 
     return (
-        <section className={'mx-auto container'}>
+        <section className={'mx-auto px-4 container'}>
             <div
                 id={'why-us'}
                 className={"pb-[15px] scroll-mt-[100px] lg:pb-[75px] pt-[25px]"}>

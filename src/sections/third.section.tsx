@@ -7,7 +7,7 @@ async function ThirdSection({data}: { data: IDoubleImageSection[] }) {
     const t = await getTranslations('ThirdSection');
 
     return (
-        <section className={'mx-auto container'}>
+        <section className={'mx-auto px-4 container'}>
             <div
                 id={'third-section'}
                 className={" mb-[40px] lg:mb-[100px]  lg:flex lg:items-center lg:justify-between lg:gap-16"}>

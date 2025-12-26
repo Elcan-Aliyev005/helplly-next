@@ -4,7 +4,7 @@ import {statisticsData} from "@/const/index.const";
 
 function AboutSection({data}: { data: { content: string, title: string } }) {
     return (
-        <div id={'about'} className={'scroll-mt-[120px] container mx-auto'}>
+        <div id={'about'} className={'scroll-mt-[120px] px-4 container mx-auto'}>
             <section  className={"pb-[40px]   lg:pb-[100px]  lg:pt-[60px] pt-[20px]"}>
                 <div className={'flex flex-col xl:gap-[128px] xl:flex-row items-start justify-between'}>
                     <div>

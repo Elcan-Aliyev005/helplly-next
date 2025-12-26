@@ -10,7 +10,7 @@ import {getTranslations} from 'next-intl/server';
 async function FourthSection({data}: {data: ISection6[]}) {
     const t = await getTranslations('FourthSection');
     return (
-      <section className={'mx-auto container'}>
+      <section className={'mx-auto px-4 container'}>
           <div
               id={'fourth-section'}
               className={"mb-[40px] lg:mb-[100px]   text-center lg:text-left grid grid-cols-1 lg:grid-cols-2 gap-6  lg:gap-20 "}>

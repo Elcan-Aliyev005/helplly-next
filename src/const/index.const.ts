@@ -130,37 +130,68 @@ export const servicesData = [
     }
 ]
 
+// export const footerData = {
+//     description:
+//         "Bizi sosial mediada izləyin",
+//
+//     sections: [
+//         {
+//             title: "Şirkət",
+//             links: [
+//                 { label: "Haqqımızda", href: "/#about" },
+//                 { label: "Biznes", href: "/#business" },
+//                 { label: "Niyə biz?", href: "/#why-us" },
+//                 { label: "Tez-tez verilən suallar", href: "/#faq" },
+//             ],
+//         },
+//         {
+//             title: "Əlaqə",
+//             links: [
+//                 { label: "helpllyservice@gmail.com", href: "mailto:helpllyservice@gmail.com" },
+//                 { label: "№ VÖEN:1407394761", href: "/" },
+//                 { label: "Azərbaycan, Bakı", href: "https://maps.app.goo.gl/rFN8JNvLUYwe2TQZ7" },
+//             ],
+//         },
+//         {
+//             title: "Məxfilik siyasəti",
+//             links: [
+//                 { label: "İstifadə şərtləri", href: "/terms-of-service" },
+//                 { label: "Məxfilik Siyasəti", href: "/privacy-and-policy" },
+//             ],
+//         },
+//     ],
+//
+//     copyright: "© 2025 Helplly. Bütün hüquqlar qorunur. ",
+// };
 export const footerData = {
-    description:
-        "Bizi sosial mediada izləyin",
-
     sections: [
         {
-            title: "Şirkət",
+            titleKey: "company",
             links: [
-                { label: "Haqqımızda", href: "/#why-us" },
-                { label: "Biznes", href: "/#business" },
-                { label: "Niyə biz?", href: "/#why-us" },
-                { label: "Tez-tez verilən suallar", href: "/#faq" },
-            ],
+                { labelKey: "about", href: "/#about" },
+                { labelKey: "business", href: "/#business" },
+                { labelKey: "whyUs", href: "/#why-us" },
+                { labelKey: "faq", href: "/#faq" }
+            ]
         },
-        {
-            title: "Əlaqə",
-            links: [
-                { label: "helpllyservice@gmail.com", href: "mailto:helpllyservice@gmail.com" },
-                { label: "№ VÖEN:1407394761", href: "/" },
-                { label: "Azərbaycan, Bakı", href: "https://maps.app.goo.gl/rFN8JNvLUYwe2TQZ7" },
-            ],
-        },
-        {
-            title: "Məxfilik siyasəti",
-            links: [
-                { label: "İstifadə şərtləri", href: "/terms-of-service" },
-                { label: "Məxfilik Siyasəti", href: "/privacy-and-policy" },
-            ],
-        },
-    ],
 
+        {
+            titleKey: "contact",
+            links: [
+                {
+                    labelKey: "contact",
+                    href: "mailto:helpllyservice@gmail.com"
+                }
+            ]
+        },
+        {
+            titleKey: "policies",
+            links: [
+                { labelKey: "termsOfService", href: "/terms-of-service" },
+                { labelKey: "privacyPolicy", href: "/privacy-and-policy" }
+            ]
+        }
+    ],
     copyright: "© 2025 Helplly. Bütün hüquqlar qorunur. ",
 };
 

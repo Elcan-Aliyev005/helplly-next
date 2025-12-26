@@ -9,7 +9,7 @@ async function BusinessSection() {
     const t = await getTranslations('BusinessSection');
     
     return (
-       <section className={'container mx-auto'}>
+       <section className={'container mx-auto px-4'}>
            <div
                id={'how-does-it-work'}
                className={" pb-[40px] xl:pb-[100px] flex flex-col xl:justify-between xl:flex-row lg:gap-[20px]  xl:pt-[73px]"}>

@@ -12,7 +12,7 @@ async function HowDoesItWorkSection({data}: { data: ITextSection[] }) {
     return (
         <section
             className={"py-6  bg-[#F9F9F9] scroll-mt-[120px]  lg:py-8 mb-[40px] lg:mb-[100px]"}>
-            <div className={'container mx-auto'}>
+            <div className={'container px-4 mx-auto'}>
                 <div className={'section-header text-center'}>
 
                     <SectionTitle className={' px-3'}>

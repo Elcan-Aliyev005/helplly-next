@@ -4,7 +4,7 @@ async function LastSection() {
     const t = await getTranslations('LastSection');
     
     return (
-        <section className={'mx-auto container'}>
+        <section className={'mx-auto px-4 container'}>
             <div className={'text-center'}>
                 <img className={'inline-block lg:hidden'} src={'/img/logo_bg-mobile.svg'} alt={"logo-bg"}/>
                 <img className={'hidden lg:inline-block'} src={'/img/logo_bg.svg'} alt={"logo-bg"}/>

@@ -8,12 +8,11 @@ import {getTranslations} from 'next-intl/server';
 
 async function ReachTheRightCustomerSection({data}: {data: IIconSection[]}) {
     const t = await getTranslations('ReachTheRightCustomerSection');
-    
+
     return (
-       <section className={'mx-auto container'}>
+       <section className={'mx-auto px-4 container'}>
            <div
-               id={'business'}
-               className={"pb-[15px] scroll-mt-[100px] lg:pb-[75px] pt-[25px]"}>
+               className={"pb-[15px]  lg:pb-[75px] pt-[25px]"}>
                <div className={'section-header text-center'}>
                    <SectionName  className={'mb-2 justify-center'}>{t('subtitle')}</SectionName>
                    <SectionTitle className={'mt-0 px-3'}>

@@ -6,7 +6,7 @@ async function WhoIsExecutorSection({data}: {data: IImageSection[]}) {
     const t = await getTranslations('WhoIsExecutorSection');
     
     return (
-      <section className={'container mx-auto'}>
+      <section     id={'business'} className={'container px-4 scroll-mt-[150px] mx-auto'}>
           <div className={'bg-[url("/img/who-is-executor-banner-mobile.svg")] mb-10  lg:mb-21  lg:bg-[url("/img/who-is-executor-banner.svg")] bg-cover bg-center ' +
               ' h-full w-full block lg:flex justify-between ' +
               'rounded-[8px] lg:rounded-[16px] overflow-hidden ' +
